@@ -14,8 +14,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use('/api/auth', authRouter);
-app.use('/api/file', FileRouter);
+app.use('/auth', authRouter);
+app.use('/file', FileRouter);
 
 // 🟡 Search User by Email
 app.get("/api/user/search", async (req, res) => {
