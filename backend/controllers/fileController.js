@@ -1,5 +1,5 @@
 // controllers/fileController.js
-import File from "../models/File.js";
+import File from "../models/file.js";
 
 // 1️⃣ Send a file (POST /api/files/send)
 export const sendFile = async (req, res) => {
