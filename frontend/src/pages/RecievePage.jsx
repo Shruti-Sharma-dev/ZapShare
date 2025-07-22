@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
+console.log("🚀 ReceivePage mounted");
 
 
 const ReceivePage = () => {

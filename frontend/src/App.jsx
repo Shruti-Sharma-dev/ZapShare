@@ -1,7 +1,7 @@
 // import { useState } from 'react'
 import Login from './pages/Login'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useEffect } from 'react';
+
 import Signup from './pages/Signup'
 import LandingScreen from './pages/LandingScreen'
 import ContextProvider from './context/ContextProvider';
@@ -12,15 +12,7 @@ import RecievePage from './pages/RecievePage';
 import PrivateRoute from './components/PrivateRoute';
 function App() {
   
-useEffect(() => {
-  socket.on("receive-file", (data) => {
-    console.log("📥 [GLOBAL] Received file:", data);
-  });
 
-  return () => {
-    socket.off("receive-file");
-  };
-}, []);
 
   return (
     <>
