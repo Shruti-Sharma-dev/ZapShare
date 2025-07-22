@@ -18,7 +18,7 @@ app.use('/auth', authRouter);
 app.use('/file', FileRouter);
 
 // 🟡 Search User by Email
-app.get("/api/user/search", async (req, res) => {
+app.get("/user/search", async (req, res) => {
   const { email } = req.query;
   const user = await User.findOne({ email });
   if (!user) return res.status(404).json(null);
