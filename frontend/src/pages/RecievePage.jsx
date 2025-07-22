@@ -23,15 +23,16 @@ const ReceivePage = () => {
 };
 
 
-  useEffect(() => {
-    socket.on("receive-file", (data) => {
-      setFileData(data);
-    });
+ useEffect(() => {
+  socket.on("receive-file", (data) => {
+    console.log("📥 Received file:", data);
+    setFileData(data);
+  });
 
-    return () => {
-      socket.off("receive-file");
-    };
-  }, []);
+  return () => {
+    socket.off("receive-file");
+  };
+}, []);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-purple-100 via-violet-100 to-pink-100 px-4">
