@@ -57,15 +57,12 @@ const server = http.createServer(app);
 
 // 🔵 Initialize Socket.IO
 const io = new Server(server, {
-  pingInterval: 25000,  // client pings every 25s
-  pingTimeout: 60000,   // wait 60s before closing idle
   cors: {
-     origin: [
-      "http://localhost:5173",              // local Vite dev
-      "https://zap-share.vercel.app",       // deployed Vercel site
-    ], // frontend
+    origin: "https://zapshare.vercel.app",  // your frontend
     methods: ["GET", "POST"],
+    credentials: true,
   },
+  transports: ["websocket"], // match the client side
 });
 
 // 🟡 userId => socketId mapping
