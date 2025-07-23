@@ -16,12 +16,13 @@ const ReceivePage = () => {
   const [fileData, setFileData] = useState(null);
   const { user, setSelectedFriend, setIsSend } = useAuth();
 
-  useEffect(() => {
-    if (user?._id) {
-      socket.emit("register", user._id);
-      console.log("📡 Registered socket for user:", user._id);
-    }
-  }, [user?._id]);
+ useEffect(() => {
+  if (user?._id) {
+    socket.emit("register", user._id);
+    console.log("📡 Registered socket for user:", user._id);
+  }
+}, [user?._id]);
+  
 
 
   const handleBack = () => {

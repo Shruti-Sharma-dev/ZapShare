@@ -27,7 +27,7 @@ const Home = () => {
     socket.emit("register", user._id);
     console.log("✅ Registered socket:", user._id);
   }
-}, [user]);
+}, [user?._id]);
 
 
   const handleStartSharing = () => {
