@@ -38,11 +38,27 @@ app.get("/user/search", async (req, res) => {
   res.json({ name: user.name, email: user.email ,_id: user._id,  });
 });
 
+
+
+
+
+
+app.get("/", (req, res) => {
+  res.send("Socket.IO Server Running!");
+});
+
+
+
+
+
+
 // 🔵 Raw HTTP Server
 const server = http.createServer(app);
 
 // 🔵 Initialize Socket.IO
 const io = new Server(server, {
+  pingInterval: 25000,  // client pings every 25s
+  pingTimeout: 60000,   // wait 60s before closing idle
   cors: {
      origin: [
       "http://localhost:5173",              // local Vite dev
